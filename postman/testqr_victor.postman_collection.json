@@ -1,0 +1,279 @@
+{
+	"info": {
+		"_postman_id": "28c66466-1d90-49e3-8b1f-6bba3fba67a2",
+		"name": "testqr (victor)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19311828"
+	},
+	"item": [
+		{
+			"name": "PING",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.victor-hernandez.live/ping",
+					"protocol": "https",
+					"host": [
+						"api",
+						"victor-hernandez",
+						"live"
+					],
+					"path": [
+						"ping"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/obtenerProfesor",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.victor-hernandez.live/obtenerProfesor",
+					"protocol": "https",
+					"host": [
+						"api",
+						"victor-hernandez",
+						"live"
+					],
+					"path": [
+						"obtenerProfesor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/obtenerAlumnos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.victor-hernandez.live/obtenerAlumnos",
+					"protocol": "https",
+					"host": [
+						"api",
+						"victor-hernandez",
+						"live"
+					],
+					"path": [
+						"obtenerAlumnos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/obtenerSecciones",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.victor-hernandez.live/obtenerSecciones",
+					"protocol": "https",
+					"host": [
+						"api",
+						"victor-hernandez",
+						"live"
+					],
+					"path": [
+						"obtenerSecciones"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/obtenerAlumnoSeccion",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.victor-hernandez.live/obtenerAlumnoSeccion",
+					"protocol": "https",
+					"host": [
+						"api",
+						"victor-hernandez",
+						"live"
+					],
+					"path": [
+						"obtenerAlumnoSeccion"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/obtenerLista",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.victor-hernandez.live/obtenerLista",
+					"protocol": "https",
+					"host": [
+						"api",
+						"victor-hernandez",
+						"live"
+					],
+					"path": [
+						"obtenerLista"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/obtenerProfesor_Seccion",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.victor-hernandez.live/obtenerProfesor_Seccion",
+					"protocol": "https",
+					"host": [
+						"api",
+						"victor-hernandez",
+						"live"
+					],
+					"path": [
+						"obtenerProfesor_Seccion"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/obtenerSeccionesPorProfesor",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.victor-hernandez.live/obtenerSeccionesPorProfesor?idProfesor=1",
+					"protocol": "https",
+					"host": [
+						"api",
+						"victor-hernandez",
+						"live"
+					],
+					"path": [
+						"obtenerSeccionesPorProfesor"
+					],
+					"query": [
+						{
+							"key": "idProfesor",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/obtenerSeccionesPorAlumno",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.victor-hernandez.live/obtenerSeccionesPorAlumno?idAlumno=1",
+					"protocol": "https",
+					"host": [
+						"api",
+						"victor-hernandez",
+						"live"
+					],
+					"path": [
+						"obtenerSeccionesPorAlumno"
+					],
+					"query": [
+						{
+							"key": "idAlumno",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/obtenerAlumnosAsistencia",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.victor-hernandez.live/obtenerAlumnosAsistencia",
+					"protocol": "https",
+					"host": [
+						"api",
+						"victor-hernandez",
+						"live"
+					],
+					"path": [
+						"obtenerAlumnosAsistencia"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/actualizarEstadoUsuario",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.victor-hernandez.live/actualizarEstadoUsuario?idAlumno=1&estadoAlumno=Inactivo",
+					"protocol": "https",
+					"host": [
+						"api",
+						"victor-hernandez",
+						"live"
+					],
+					"path": [
+						"actualizarEstadoUsuario"
+					],
+					"query": [
+						{
+							"key": "idAlumno",
+							"value": "1"
+						},
+						{
+							"key": "estadoAlumno",
+							"value": "Inactivo",
+							"description": "Activo,Inactivo"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/getAllBySeccionId (getAllAlumnSection)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.victor-hernandez.live/getAllBySeccionId?id=1",
+					"protocol": "https",
+					"host": [
+						"api",
+						"victor-hernandez",
+						"live"
+					],
+					"path": [
+						"getAllBySeccionId"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
