@@ -1,0 +1,41 @@
+<ion-header [translucent]="true">
+  <ion-toolbar >
+    <ion-img class="image" alt="Vivo DuocUC" src="https://duoc.modyocdn.com/uploads/d1065e11-cde5-40b4-b58f-59004919c757/original/logo_duoc.svg"></ion-img>     
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <h3>Bienvenido/a</h3>
+      <h3>{{ user?.nombre }} {{ user?.apellido }}</h3>
+      <h6>Fecha: {{fechaActual}}, hora: {{horaActual}}</h6><br>
+    </ion-card-content>
+    <button (click)="getSeccionesByAlumnoId()" class="obtener">1.- Click aquí para obtener secciones</button>
+    <ion-list class="listasecciones">
+      <ion-item>
+        <ion-grid >
+          <ion-row>
+            <ion-col size="8">
+              <ion-list>
+                <ion-item>
+                  <ion-select label="2.- Seleccione aquí" label-placement="floating" [interfaceOptions]="customAlertOptions" interface="alert" placeholder="Obligatorio" [(ngModel)]="selectedSeccion" (ionChange)="seccionSeleccionada($event)">
+                    <ion-select-option *ngFor="let seccion of alummnoSections" [value]="seccion.NOMBRE_SECCION">{{seccion.NOMBRE_SECCION}}</ion-select-option>
+                  </ion-select>
+                  </ion-item>
+              </ion-list>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+    </ion-list>
+    <ion-button (click)="continuar()">Continuar</ion-button>
+  </ion-card>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar >
+    <ion-img class="imfoot" alt="LogoEscuela" src="https://media.licdn.com/dms/image/C5116AQFjsWVbWn2A5A/profile-displaybackgroundimage-shrink_200_800/0/1517046331426?e=2147483647&v=beta&t=Q9FJ8RESEF1264vnT_L-D_5xZpwZxHmV9bKwX1bQUNo"></ion-img>
+  </ion-toolbar>
+</ion-footer> 
+

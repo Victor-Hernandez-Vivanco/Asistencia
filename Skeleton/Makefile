@@ -1,0 +1,23 @@
+build:
+	rm -rf .angular
+	rm -rf wwww
+	rm -rf ios
+	rm -rf android
+	ionic build
+	ionic cap add ios
+	ionic cap add android
+
+build-web:
+	rm -rf wwww
+	ionic build
+
+open: build
+	ionic cap open ios
+	ionic cap open android
+
+
+another:
+	ionic cap copy
+	ionic cap sync
+	ionic cap open ios
+	ionic cap open android

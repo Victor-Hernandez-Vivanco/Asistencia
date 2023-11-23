@@ -1,0 +1,7 @@
+ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE; 
+
+create user skeletonApp
+identified by skeleton
+default tablespace USERS;
+
+GRANT ALL PRIVILEGES TO skeletonApp;

@@ -1,0 +1,61 @@
+ion-content {
+    --background: url(http://h.fastcompany.net/multisite_files/codesign/imagecache/1280/poster/2013/07/1673064-poster-1280-tatooine.jpg) no-repeat center center / cover;
+    background-size: 100%;
+    background-attachment: fixed;
+
+}
+
+  h1 {
+    color: #FFFFFF;
+    text-align: center;
+    font-family: lucida console;
+    font-size: 30pt;
+    text-shadow: 11px 10px 0px #000000;
+    animation: myfirst 3s linear 2s infinite alternate-reverse;
+  }
+  
+  @keyframes myfirst {
+    20% { color: red; }
+    50% { color: rgb(0, 140, 255); }
+  }
+  
+  h2,
+  h3 {
+    color: #ffffff;
+    text-align: center;
+    font-family:  Georgia, 'Times New Roman', Times, serif;
+    font-size: 30pt;
+    text-shadow: 5px 4px 0px #000000;
+  }
+
+  h4{
+    color: #ffffff;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+  
+  img {
+    height: 400px;
+    position: fixed;
+    top: 515px;
+    size: 50%;
+  }
+  
+  .img2 {
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    top: 100px;
+    //animation: mysecond 2s linear 1s infinite alternate-reverse;
+  }
+  
+  @keyframes mysecond {
+    from { top: 10px; }
+    to { left: 990px; }
+  }
+
+  .custom-button {
+    position: absolute;
+    top: 300px; /* Ajusta la distancia desde la parte superior según tus necesidades */
+    right: 130px; /* Ajusta la distancia desde la derecha según tus necesidades */
+  }
