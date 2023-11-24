@@ -1,0 +1,57 @@
+ion-loading.custom-loading {
+    --background: #e3edff;
+    --spinner-color: #1c6dff;
+  
+    color: #000207;
+  }
+
+  
+  .image{// imagen vivo duoc
+    height: 60px;
+    padding: .5em;
+    background-color: blue;
+}
+
+.imfoot{// footer
+  height: 60px;
+  padding: .5em;
+}
+
+h3{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size:medium;
+  color: black;
+  margin: 5%;
+}
+
+.item{
+  background-color: white;
+}
+
+h3{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size:large;
+  color: black;
+  //padding: 5%;
+  margin: 5%;
+}
+
+h4{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size:small;
+  color: black;
+  //padding: 5%;
+  margin: 5%;
+}
+
+.inp{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size:x-small; 
+}
+
+.btncolor{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size:medium;
+  color: rgb(255, 196, 0);
+  font-size:small;
+}

@@ -1,0 +1,62 @@
+.qwert{// ion-header
+    height: 20%;
+  }
+  
+  .im{ // logo duoc uc
+    width:30%;
+    margin:1%;
+  }
+
+  .image{// imagen vivo duoc
+    height: 60px;
+    padding: .5em;
+    background-color: blue;
+}
+
+.carcont{ // ion-card, del content
+    border-radius: 5%;
+    box-shadow: 15px 10px 10px 0 rgba(0, 0, 0, 0.6);
+    color: black;
+    //background-color:rgb(255, 228, 181);
+    background-color: blue;
+    //height: 10%;
+    opacity: 0.8;
+    //margin: 5%;
+  }
+
+  h3{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size:medium;
+    color: black;
+    //padding: 5%;
+    margin: 5%;
+  }
+
+  h6{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size:small;
+    color: black;
+    //padding: 5%;
+    margin: 5%;
+  }
+
+  .btncerrar{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size:medium;
+    color: red;
+    font-size:small;
+  }
+
+  .item{
+    background-color: white;
+  }
+
+.inp{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size:x-small; 
+}
+
+.imfoot{// footer
+    height: 60px;
+    padding: .5em;
+}
