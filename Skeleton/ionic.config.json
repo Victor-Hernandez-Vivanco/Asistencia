@@ -1,7 +1,0 @@
-{
-  "name": "testqr",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular"
-}
