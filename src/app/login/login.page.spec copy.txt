@@ -1,0 +1,259 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { LoginPage } from './login.page';
+import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
+import { RouterTestingModule } from '@angular/router/testing';
+import { IonicModule, AlertController, LoadingController, NavController } from '@ionic/angular';
+import { BBDDasistenciaService } from '../bbddasistencia.service';
+import { AuthGuard } from '../auth.guard';
+import { of } from 'rxjs';
+import { HttpResponse } from '@angular/common/http';
+
+describe('LoginPage', () => {
+  let component: LoginPage;
+  let fixture: ComponentFixture<LoginPage>;
+  let alertControllerSpy: jasmine.SpyObj<AlertController>;
+  let apiServiceSpy: jasmine.SpyObj<BBDDasistenciaService>;
+  let authGuardSpy: jasmine.SpyObj<AuthGuard>;
+
+  beforeEach(async(() => {
+    alertControllerSpy = jasmine.createSpyObj('AlertController', ['create']);
+    apiServiceSpy = jasmine.createSpyObj('BBDDasistenciaService', ['getProfesorData', 'getAlumnolData']);
+    authGuardSpy = jasmine.createSpyObj('AuthGuard', ['setAuthenticationStatus']);
+
+    TestBed.configureTestingModule({
+      declarations: [LoginPage],
+      imports: [
+        IonicModule.forRoot(),
+        ReactiveFormsModule,
+        RouterTestingModule
+      ],
+      providers: [
+        FormBuilder,
+        { provide: AlertController, useValue: alertControllerSpy },
+        { provide: BBDDasistenciaService, useValue: apiServiceSpy },
+        { provide: AuthGuard, useValue: authGuardSpy }
+        // ... Aquí van otros proveedores que necesites simular
+      ]
+    }).compileComponents();
+
+    fixture = TestBed.createComponent(LoginPage);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  }));
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+
+  it('should handle login for valid form', () => {
+    // Aquí configuras el formulario para que sea válido y simulas las respuestas de tus servicios
+    component.formulariologin.setValue({ correo: 'test@example.com', password: '123456' });
+
+    // Simula la respuesta de tus servicios
+    apiServiceSpy.getProfesorData.and.returnValue(of([]));
+    apiServiceSpy.getAlumnolData.and.returnValue(of([]));
+
+    // Espía el método mostrarAlerta para verificar si se llama
+    spyOn(component, 'mostrarAlerta').and.callThrough();
+
+    // Llama al método ingresar
+    component.ingresar();
+
+    // Verifica que mostrarAlerta fue llamado con los argumentos esperados
+    expect(component.mostrarAlerta).toHaveBeenCalledWith('Error', 'Correo o contraseña incorrectos');
+    expect(true).toBeTruthy();
+
+    // Aquí verificas el comportamiento esperado, como mostrar alertas, redirigir, etc.
+    // Por ejemplo, verificar si se muestra una alerta de éxito
+    // cexpect(alertControllerSpy.create).toHaveBeenCalled();
+    // ... Otros expect que necesites para verificar el comportamiento
+  });
+
+  // Puedes agregar más tests para otros escenarios, como formularios inválidos, errores en la autenticación, etc.
+
+});
+
+/*  // create a response un HttpResponse mock
+    const response = new HttpResponse({ body: [
+      {
+          "idprofesor": 1,
+          "nombre": "Juan",
+          "apellido": "Valdez",
+          "correo": "juan@profesor.duocuc.cl",
+          "contrasena": "123456"
+      },
+      {
+          "idprofesor": 2,
+          "nombre": "Angelica",
+          "apellido": "Galindo",
+          "correo": "angelica@profesor.duocuc.cl",
+          "contrasena": "123456"
+      },
+      {
+          "idprofesor": 3,
+          "nombre": "Patricio",
+          "apellido": "Rojas",
+          "correo": "patricio@profesor.duocuc.cl",
+          "contrasena": "123456"
+      }
+  ] });
+
+  const response2 = new HttpResponse({ body: [
+    {
+        "idalumno": 1,
+        "nombre": "Anaeli",
+        "apellido": "Neira",
+        "correo": "anaeli@duocuc.cl",
+        "contrasena": "123456",
+        "estado": "ausente"
+    },
+    {
+        "idalumno": 2,
+        "nombre": "Barbara",
+        "apellido": "Hurtado",
+        "correo": "barbara@duocuc.cl",
+        "contrasena": "123456",
+        "estado": "ausente"
+    },
+    {
+        "idalumno": 3,
+        "nombre": "Victor",
+        "apellido": "Hernandez",
+        "correo": "victor@duocuc.cl",
+        "contrasena": "123456",
+        "estado": "ausente"
+    },
+    {
+        "idalumno": 4,
+        "nombre": "Claudio",
+        "apellido": "Rosas",
+        "correo": "claudio@duocuc.cl",
+        "contrasena": "123456",
+        "estado": "ausente"
+    },
+    {
+        "idalumno": 5,
+        "nombre": "Marcos",
+        "apellido": "Vargas",
+        "correo": "marcos@duocuc.cl",
+        "contrasena": "123456",
+        "estado": "ausente"
+    },
+    {
+        "idalumno": 6,
+        "nombre": "Cristian",
+        "apellido": "Hernandez",
+        "correo": "cristian@duocuc.cl",
+        "contrasena": "123456",
+        "estado": "ausente"
+    },
+    {
+        "idalumno": 7,
+        "nombre": "Felipe",
+        "apellido": "Hernandez",
+        "correo": "felipe@duocuc.cl",
+        "contrasena": "123456",
+        "estado": "ausente"
+    },
+    {
+        "idalumno": 8,
+        "nombre": "Juana",
+        "apellido": "Hernandez",
+        "correo": "juana@duocuc.cl",
+        "contrasena": "123456",
+        "estado": "ausente"
+    },
+    {
+        "idalumno": 10,
+        "nombre": "Susana",
+        "apellido": "Vivanco",
+        "correo": "susana@duocuc.cl",
+        "contrasena": "123456",
+        "estado": "ausente"
+    },
+    {
+        "idalumno": 11,
+        "nombre": "Cecilia",
+        "apellido": "Vivanco",
+        "correo": "cecilia@duocuc.cl",
+        "contrasena": "123456",
+        "estado": "ausente"
+    },
+    {
+        "idalumno": 12,
+        "nombre": "Marta",
+        "apellido": "Soza",
+        "correo": "marta@duocuc.cl",
+        "contrasena": "123456",
+        "estado": "ausente"
+    },
+    {
+        "idalumno": 13,
+        "nombre": "Margarita",
+        "apellido": "Melendez",
+        "correo": "margarita@duocuc.cl",
+        "contrasena": "123456",
+        "estado": "ausente"
+    },
+    {
+        "idalumno": 14,
+        "nombre": "Sergio",
+        "apellido": "Meza",
+        "correo": "sergio@duocuc.cl",
+        "contrasena": "123456",
+        "estado": "ausente"
+    },
+    {
+        "idalumno": 15,
+        "nombre": "Alberto",
+        "apellido": "Juarez",
+        "correo": "alberto@duocuc.cl",
+        "contrasena": "123456",
+        "estado": "ausente"
+    }
+] })
+
+const response3 = new HttpResponse({ body: [
+  {
+      "idseccion": 1,
+      "codseccion": "CSY4111",
+      "seccion": "004V",
+      "nombre_seccion": "Calidad de Software"
+  },
+  {
+      "idseccion": 2,
+      "codseccion": "PGY4121",
+      "seccion": "010V",
+      "nombre_seccion": "Progr. App Moviles"
+  },
+  {
+      "idseccion": 3,
+      "codseccion": "ASY4131",
+      "seccion": "011V",
+      "nombre_seccion": "Arquitectura"
+  },
+  {
+      "idseccion": 4,
+      "codseccion": "APY4461",
+      "seccion": "006V",
+      "nombre_seccion": "Proceso de potafolio"
+  },
+  {
+      "idseccion": 5,
+      "codseccion": "EAY4450",
+      "seccion": "008V",
+      "nombre_seccion": "Etica para el trabajo"
+  },
+  {
+      "idseccion": 6,
+      "codseccion": "MAT4140",
+      "seccion": "012V",
+      "nombre_seccion": "Estadistica descriptiva"
+  },
+  {
+      "idseccion": 7,
+      "codseccion": "INI5111",
+      "seccion": "005V",
+      "nombre_seccion": "Ingles intermedio"
+  }
+] }); */
